@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Evidencija prisustva</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+<h1>Predavanja:</h1>
+
+<form action="/api/<%= student.number %>/update" method="post">
+    <% if(student.lecture_1 === true) { %>
+        <input type="checkbox" name="lecture_1" value = "checked1" checked disabled>
+        <label for="lecture_1"> Predavanje 1</label><br>
+    <% } else {%>
+        <input type="checkbox" name="lecture_1" value = "checked1">
+        <label for="lecture_1"> Predavanje 1</label><br>
+    <% } %>
+
+    <% if(student.lecture_2 === true) { %>
+        <input type="checkbox" name="lecture_2" value = "checked2" checked disabled>
+        <label for="lecture_2"> Predavanje 2</label><br>
+    <% } else {%>
+        <input type="checkbox" name="lecture_2" value = "checked2">
+        <label for="lecture_2"> Predavanje 2</label><br>
+    <% } %>
+
+    <% if(student.lecture_3 === true) { %>
+        <input type="checkbox" name="lecture_3" value = "checked3" checked disabled>
+        <label for="lecture_3"> Predavanje 3</label><br>
+    <% } else {%>
+        <input type="checkbox" name="lecture_3" value = "checked3">
+        <label for="lecture_3"> Predavanje 3</label><br>
+    <% } %>
+    
+    <% if(student.lecture_4 === true) { %>
+        <input type="checkbox" name="lecture_4" value = "checked4" checked disabled>
+        <label for="lecture_4"> Predavanje 4</label><br>
+    <% } else {%>
+        <input type="checkbox" name="lecture_4" value = "checked4">
+        <label for="lecture_4"> Predavanje 4</label><br>
+    <% } %>
+
+
+    <% if(student.lecture_5 === true) { %>
+        <input type="checkbox" name="lecture_5" value = "checked5" checked disabled>
+        <label for="lecture_4"> Predavanje 5</label><br>
+    <% } else {%>
+        <input type="checkbox" name="lecture_5" value = "checked5">
+        <label for="lecture_5"> Predavanje 5</label><br>
+    <% } %>
+
+    <% if(student.lecture_6 === true) { %>
+        <input type="checkbox" name="lecture_6" value = "checked6" checked disabled>
+        <label for="lecture_4"> Predavanje 6</label><br>
+    <% } else {%>
+        <input type="checkbox" name="lecture_6" value = "checked6">
+        <label for="lecture_6"> Predavanje 6</label><br>
+    <% } %>
+    
+    <br>
+    <input type="submit" value="Submit"> 
+</form>
+
+</body>
+</html>
