@@ -42,7 +42,7 @@ async function updateStudent(req, res, next) {
     }
 
     if(lecture_5 == "checked5"){
-        student.lecture_2 = true;
+        student.lecture_5 = true;
     }
 
     if(lecture_6 == "checked6"){
