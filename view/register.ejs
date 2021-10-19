@@ -4,65 +4,106 @@
 <head>
     <title>Evidencija prisustva</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 
 <body>
+    <header id="header" class="alt">
+        <h1><a href="https://www.sumamatf.rs/"><img alt="SUMA" src="/css/SUMA_LOGO_FATTY.png" width="80" height="80"></a></h1>
+        
+    </header>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        
+        <div class="w3-display-middle">
+          <h1 class="w3-jumbo w3-animate-top" style = "text-align: center;">Predavanja</h1>
+          <hr class="w3-border-grey" style="margin:auto;width:40%">
+          <p>
+            <form class="w3-large w3-center" action="/api/<%= student.number %>/update" method="post">
+                    
+                <% if(student.lecture_1 === true) { %>
+                        <input type="checkbox" name="lecture_1" value = "checked1" checked>
+                        <label for="lecture_1"> Vesna Todorčević - Iza kulisa stvaralaštva</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_1" value = "checked1">
+                        <label for="lecture_1">Vesna Todorčević - Iza kulisa stvaralaštva</label><br>
+                    <% } %>
 
-<h1>Predavanja:</h1>
-
-<form action="/api/<%= student.number %>/update" method="post">
-    <% if(student.lecture_1 === true) { %>
-        <input type="checkbox" name="lecture_1" value = "checked1" checked disabled>
-        <label for="lecture_1"> Predavanje 1</label><br>
-    <% } else {%>
-        <input type="checkbox" name="lecture_1" value = "checked1">
-        <label for="lecture_1"> Predavanje 1</label><br>
-    <% } %>
-
-    <% if(student.lecture_2 === true) { %>
-        <input type="checkbox" name="lecture_2" value = "checked2" checked disabled>
-        <label for="lecture_2"> Predavanje 2</label><br>
-    <% } else {%>
-        <input type="checkbox" name="lecture_2" value = "checked2">
-        <label for="lecture_2"> Predavanje 2</label><br>
-    <% } %>
-
-    <% if(student.lecture_3 === true) { %>
-        <input type="checkbox" name="lecture_3" value = "checked3" checked disabled>
-        <label for="lecture_3"> Predavanje 3</label><br>
-    <% } else {%>
-        <input type="checkbox" name="lecture_3" value = "checked3">
-        <label for="lecture_3"> Predavanje 3</label><br>
-    <% } %>
-    
-    <% if(student.lecture_4 === true) { %>
-        <input type="checkbox" name="lecture_4" value = "checked4" checked disabled>
-        <label for="lecture_4"> Predavanje 4</label><br>
-    <% } else {%>
-        <input type="checkbox" name="lecture_4" value = "checked4">
-        <label for="lecture_4"> Predavanje 4</label><br>
-    <% } %>
-
-
-    <% if(student.lecture_5 === true) { %>
-        <input type="checkbox" name="lecture_5" value = "checked5" checked disabled>
-        <label for="lecture_4"> Predavanje 5</label><br>
-    <% } else {%>
-        <input type="checkbox" name="lecture_5" value = "checked5">
-        <label for="lecture_5"> Predavanje 5</label><br>
-    <% } %>
-
-    <% if(student.lecture_6 === true) { %>
-        <input type="checkbox" name="lecture_6" value = "checked6" checked disabled>
-        <label for="lecture_4"> Predavanje 6</label><br>
-    <% } else {%>
-        <input type="checkbox" name="lecture_6" value = "checked6">
-        <label for="lecture_6"> Predavanje 6</label><br>
-    <% } %>
-    
-    <br>
-    <input type="submit" value="Submit"> 
-</form>
+                    <% if(student.lecture_2 === true) { %>
+                        <input type="checkbox" name="lecture_2" value = "checked2" checked >
+                        <label for="lecture_2"> Srđan Vukmirović - Projektivna geometrija i stereoskopski vid</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_2" value = "checked2">
+                        <label for="lecture_2"> Srđan Vukmirović - Projektivna geometrija i stereoskopski vid</label><br>
+                    <% } %>
+            
+                    <% if(student.lecture_3 === true) { %>
+                        <input type="checkbox" name="lecture_3" value = "checked3" checked >
+                        <label for="lecture_3"> Miroslava Antić - Geometrija afinih hiperpovrsi</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_3" value = "checked3">
+                        <label for="lecture_3"> Miroslava Antić - Geometrija afinih hiperpovrsi</label><br>
+                    <% } %>
+                 
+                    <% if(student.lecture_4 === true) { %>
+                        <input type="checkbox" name="lecture_4" value = "checked4" checked >
+                        <label for="lecture_4"> Marija Cvetković - Matematika u službi zakona</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_4" value = "checked4">
+                        <label for="lecture_4"> Marija Cvetković - Matematika u službi zakona</label><br>
+                    <% } %>
+                
+                
+                    <% if(student.lecture_5 === true) { %>
+                        <input type="checkbox" name="lecture_5" value = "checked5" checked>
+                        <label for="lecture_5"> Jelena Jocković -  Primena matematike - korak dalje od školskih primera</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_5" value = "checked5">
+                        <label for="lecture_5">Jelena Jocković -  Primena matematike - korak dalje od školskih primera</label><br>
+                    <% } %>
+                
+                    <% if(student.lecture_6 === true) { %>
+                        <input type="checkbox" name="lecture_6" value = "checked6" checked >
+                        <label for="lecture_6">Dejan Urošević - Ostaci supernovih: najmoćniji akceleratori u Galaksiji</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_6" value = "checked6">
+                        <label for="lecture_6">Dejan Urošević - Ostaci supernovih: najmoćniji akceleratori u Galaksiji</label><br>
+                    <% } %>
+                
+                    <% if(student.lecture_7 === true) { %>
+                        <input type="checkbox" name="lecture_7" value = "checked7" checked >
+                        <label for="lecture_7"> Bojan Novaković - Matematički izazovi predviđanja opasnosti od udara asteroida</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_7" value = "checked7">
+                        <label for="lecture_7">Bojan Novaković - Matematički izazovi predviđanja opasnosti od udara asteroida</label><br>
+                    <% } %>
+                    
+                    <% if(student.lecture_8 === true) { %>
+                        <input type="checkbox" name="lecture_8" value = "checked8" checked >
+                        <label for="lecture_8">Miljan Knežević - ?</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_8" value = "checked8">
+                        <label for="lecture_8">Miljan Knežević - ?</label><br>
+                    <% } %>
+                
+                    <% if(student.lecture_9 === true) { %>
+                        <input type="checkbox" name="lecture_9" value = "checked9" checked>
+                        <label for="lecture_9"> Bojana Milošević - ?</label><br>
+                    <% } else {%>
+                        <input type="checkbox" name="lecture_9" value = "checked9">
+                        <label for="lecture_9">Bojana Milošević - ?</label><br>
+                    <% } %>
+                    
+                <br>
+                <input type="submit" value="Submit"> 
+            </form>
+        </p>
+    </div>
+        <div class="w3-display-bottomleft w3-padding-large">
+            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+        </div>
+</div>
 
 </body>
 </html>

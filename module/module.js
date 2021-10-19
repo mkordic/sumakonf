@@ -10,6 +10,9 @@ const schema = new mongoose.Schema ( {
     lecture_4: Boolean, 
     lecture_5: Boolean, 
     lecture_6: Boolean,
+    lecture_7: Boolean,
+    lecture_8: Boolean,
+    lecture_9: Boolean,
 });
 
 const model = mongoose.model('Model', schema, 'prisutni');
@@ -34,6 +37,9 @@ async function updateStudent(student){
             lecture_4: student.lecture_4,
             lecture_5: student.lecture_5,
             lecture_6: student.lecture_6,
+            lecture_7: student.lecture_7,
+            lecture_8: student.lecture_8,
+            lecture_9: student.lecture_9,
         }
     }).exec();
 
