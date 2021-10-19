@@ -1,5 +1,10 @@
-body,h1 {
-    font-family: "Raleway", sans-serif
+body {
+    font-family: "Raleway", sans-serif;
+    color: white;
+}
+
+h1 {
+  font-family: "Lucida Handwriting";
 }
 
 body, html {
@@ -87,4 +92,19 @@ body, html {
 		text-overflow: ellipsis;
 	}
 
+  .checkboxes label {
+    display: block;
+    padding-right: 10px;
+    padding-left: 22px;
+    text-indent: -22px;
+  }
+  .checkboxes input {
+    vertical-align: middle;
+  }
+  .checkboxes label span {
+    vertical-align: middle;
+  }
 
+  label {
+    display: inline-block;
+  }
