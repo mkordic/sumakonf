@@ -4,22 +4,23 @@ const schema = new mongoose.Schema ( {
     _id: mongoose.Schema.Types.ObjectId,
     number: Number,
     fullName: String,
-    lecture_1: Boolean,
-    lecture_2: Boolean,
-    lecture_3: Boolean,
-    lecture_4: Boolean, 
-    lecture_5: Boolean, 
-    lecture_6: Boolean,
-    lecture_7: Boolean,
-    lecture_8: Boolean,
-    lecture_9: Boolean,
+    lecture_1: {type: Boolean, default: false},
+    lecture_2: {type: Boolean, default: false},
+    lecture_3: {type: Boolean, default: false},
+    lecture_4: {type: Boolean, default: false},
+    lecture_5: {type: Boolean, default: false},
+    lecture_6: {type: Boolean, default: false},
+    lecture_7: {type: Boolean, default: false},
+    lecture_8: {type: Boolean, default: false},
+    lecture_9: {type: Boolean, default: false},
+    certificate: {type: Boolean, default: false},
 });
 
 const model = mongoose.model('Model', schema, 'prisutni');
 
 async function getStudentByNumber(number){
     const student = await model.find({number: number}).exec();
-    /// OVDE JE GRESKA, ali zasto ulazi u ovaj if??? Proveri bazu da li je dobra, a ako ne onda mozda nevalja shema ili nesto tako
+    
     if(student.length === 0){
         console.log('Kako se ovo desilo?')
         return null;
@@ -27,7 +28,6 @@ async function getStudentByNumber(number){
     return student[0];
 }
 
-// izgleda da ne radi ova funkcija, ne znam zasto
 async function updateStudent(student){
     const updatedStudent = await model.updateOne({number: student.number}, {
         $set: {
@@ -40,13 +40,12 @@ async function updateStudent(student){
             lecture_7: student.lecture_7,
             lecture_8: student.lecture_8,
             lecture_9: student.lecture_9,
+            certificate: student.certificate,
         }
     }).exec();
 
     console.log(updatedStudent);
 }
-
-// funkcija koja ce da promeni bool vrednost za odredjeno lecture
 
 module.exports = {
     getStudentByNumber,

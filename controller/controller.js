@@ -26,29 +26,30 @@ async function updateStudent(req, res, next) {
     const lecture_9 = req.body.lecture_9;
 
     const student = await model.getStudentByNumber(number);
-    console.log(lecture_1);
+    let count = 0;
     if(lecture_1 == "checked1"){
-        console.log("Usao1");
+        count++;
         student.lecture_1 = true;
     } else {
-       console.log('Promenio1');
-         student.lecture_1 = false;
+        student.lecture_1 = false;
     }
 
     if(lecture_2 == "checked2"){
-        console.log("Usao2")
+        count++;
         student.lecture_2 = true;
     } else {
         student.lecture_2 = false;
     }
 
     if(lecture_3 == "checked3"){
+        count++;
         student.lecture_3 = true;
     } else {
         student.lecture_3 = false;
     }
 
     if(lecture_4 == "checked4"){
+        count++;
         student.lecture_4 = true;
     } else {
         student.lecture_4 = false;
@@ -56,32 +57,43 @@ async function updateStudent(req, res, next) {
 
     if(lecture_5 == "checked5"){
         student.lecture_5 = true;
+        count++;
     } else {
         student.lecture_5 = false;
     }
 
     if(lecture_6 == "checked6"){
+        count++;
         student.lecture_6 = true;
     } else {
         student.lecture_6 = false;
     }
 
     if(lecture_7 == "checked7"){
+        count++;
         student.lecture_7 = true;
     } else {
         student.lecture_7 = false;
     }
 
     if(lecture_8 == "checked8"){
+        count++;
         student.lecture_8 = true;
     } else {
         student.lecture_8 = false;
     }
 
     if(lecture_9 == "checked9"){
+        count++;
         student.lecture_9 = true;
     } else {
         student.lecture_9 = false;
+    }
+
+    if(count >= 6){
+        student.certificate = true;
+    } else {
+        student.certificate = false;
     }
 
     await model.updateStudent(student);
