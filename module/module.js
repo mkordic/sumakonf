@@ -13,6 +13,14 @@ const schema = new mongoose.Schema ( {
     lecture_7: {type: Boolean, default: false},
     lecture_8: {type: Boolean, default: false},
     lecture_9: {type: Boolean, default: false},
+    lecture_10: {type: Boolean, default: false},
+    lecture_11: {type: Boolean, default: false},
+    lecture_12: {type: Boolean, default: false},
+    lecture_13: {type: Boolean, default: false},
+    lecture_14: {type: Boolean, default: false},
+    lecture_15: {type: Boolean, default: false},
+    lecture_16: {type: Boolean, default: false},
+    lecture_17: {type: Boolean, default: false},
     certificate: {type: Boolean, default: false},
 });
 
@@ -40,6 +48,14 @@ async function updateStudent(student){
             lecture_7: student.lecture_7,
             lecture_8: student.lecture_8,
             lecture_9: student.lecture_9,
+            lecture_10: student.lecture_10,
+            lecture_11: student.lecture_11,
+            lecture_12: student.lecture_12,
+            lecture_13: student.lecture_13,
+            lecture_14: student.lecture_14,
+            lecture_15: student.lecture_15,
+            lecture_16: student.lecture_16,
+            lecture_17: student.lecture_17,
             certificate: student.certificate,
         }
     }).exec();

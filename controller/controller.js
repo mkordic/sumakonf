@@ -24,6 +24,15 @@ async function updateStudent(req, res, next) {
     const lecture_7 = req.body.lecture_7;
     const lecture_8 = req.body.lecture_8;
     const lecture_9 = req.body.lecture_9;
+    const lecture_10 = req.body.lecture_10;
+    const lecture_11 = req.body.lecture_11;
+    const lecture_12 = req.body.lecture_12;
+    const lecture_13 = req.body.lecture_13;
+    const lecture_14 = req.body.lecture_14;
+    const lecture_15 = req.body.lecture_15;
+    const lecture_16 = req.body.lecture_16;
+    const lecture_17 = req.body.lecture_17;
+
 
     const student = await model.getStudentByNumber(number);
     let count = 0;
@@ -90,7 +99,64 @@ async function updateStudent(req, res, next) {
         student.lecture_9 = false;
     }
 
-    if(count >= 6){
+    if(lecture_10 == "checked10"){
+        count++;
+        student.lecture_10 = true;
+    } else {
+        student.lecture_10 = false;
+    }
+  
+    if(lecture_11 == "checked11"){
+        count++;
+        student.lecture_11 = true;
+    } else {
+        student.lecture_11 = false;
+    }
+  
+    if(lecture_12 == "checked12"){
+        count++;
+        student.lecture_12 = true;
+    } else {
+        student.lecture_12 = false;
+    }
+  
+    if(lecture_13 == "checked13"){
+        count++;
+        student.lecture_13 = true;
+    } else {
+        student.lecture_13 = false;
+    }
+  
+    if(lecture_14 == "checked14"){
+        count++;
+        student.lecture_14 = true;
+    } else {
+        student.lecture_14 = false;
+    }
+  
+    if(lecture_15 == "checked15"){
+        count++;
+        student.lecture_15 = true;
+    } else {
+        student.lecture_15 = false;
+    }
+  
+    if(lecture_16 == "checked16"){
+        count++;
+        student.lecture_16 = true;
+    } else {
+        student.lecture_16 = false;
+    }
+  
+    if(lecture_17 == "checked17"){
+        count++;
+        student.lecture_17 = true;
+    } else {
+        student.lecture_17 = false;
+    }
+
+
+    if(count >= 12){
         student.certificate = true;
     } else {
         student.certificate = false;
