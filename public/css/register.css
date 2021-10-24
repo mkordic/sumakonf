@@ -108,3 +108,39 @@ body, html {
   label {
     display: inline-block;
   }
+
+  #cetvrtak {
+    display: inline-block;
+    width: 400px;
+    height: 680px;
+    margin: 10px auto;
+    overflow: auto;
+    -moz-box-shadow: #555 0 0 8px;
+    -webkit-box-shadow: #555 0 0 8px;
+    -o-box-shadow: #555 0 0 8px;
+    box-shadow: #555 0 0 8px;
+  }
+
+  #petak {
+    display: inline-block;
+    width: 400px;
+    height: 680px;
+    margin: 10px auto;
+    overflow: auto;
+    -moz-box-shadow: #555 0 0 8px;
+    -webkit-box-shadow: #555 0 0 8px;
+    -o-box-shadow: #555 0 0 8px;
+    box-shadow: #555 0 0 8px;
+  }
+
+  #subota {
+    display: inline-block;
+    width: 400px;
+    height: 680px;
+    margin: 10px auto;
+    overflow: auto;
+    -moz-box-shadow: #555 0 0 8px;
+    -webkit-box-shadow: #555 0 0 8px;
+    -o-box-shadow: #555 0 0 8px;
+    box-shadow: #555 0 0 8px;
+  }

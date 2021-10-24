@@ -16,26 +16,36 @@
     </header>
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
             
-        <h1 class="w3-jumbo w3-animate-top" style = "text-align: center; padding-top: 100px;"> <%= student.fullName %> </h1>
-        <h1 class="w3-jumbo w3-animate-top" style = "text-align: center; padding-top: 100px;">Predavanja</h1>
+        <h1 class="w3-jumbo w3-animate-top" style = "text-align: center; padding-top: 100px; font-family: Brush Script Std;"> <%= student.fullName %> </h1>
+        <h1 class="w3-jumbo w3-animate-top" style = "text-align: center; padding-top: 100px; font-family: Brush Script MT;">Predavanja</h1>
         <hr class="w3-border-grey" style="margin:auto;width:40%">
             
             <form class="w3-large w3-center" action="/api/<%= student.number %>/update" method="post">
                 <div class="checkboxes">
+                    <div id="cetvrtak">
+                    <h1 style = "text-align: center; font-size: 50px; font-family: Brush Script MT;"> Cetvrtak </h1>
+                    <hr class="w3-border-grey" style="margin:auto;width:40%">
+                    <br>
+
                     <% if(student.lecture_1 === true) { %>
-                            <label><input type="checkbox" name="lecture_1" value = "checked1" checked>
-                            <span><b>Vesna Todorčević</b> - <i>Iza kulisa stvaralaštva</i></span></label><br>
+                        <label><input type="checkbox" name="lecture_1" value = "checked1" checked>
+                        <span><b>Elizaveta Liliom</b> - <i>Sve što ste hteli da znate o Data Scienc-u</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_1" value = "checked1">
-                            <span><b>Vesna Todorčević</b> - <i>Iza kulisa stvaralaštva</i></span></label><br>
+                            <span><b>Elizaveta Liliom</b> - <i>Sve što ste hteli da znate o Data Scienc-u</i></span></label><br>
                         <% } %>
+                    </div>
 
+                    <div id="petak">
+                        <h1 style = "text-align: center; font-size: 50px; font-family: Brush Script MT;"> Petak </h1>
+                        <hr class="w3-border-grey" style="margin:auto;width:40%">
+                        <br>
                         <% if(student.lecture_2 === true) { %>
                             <label><input type="checkbox" name="lecture_2" value = "checked2" checked >
-                            <span><b>Srđan Vukmirović</b> - <i>Projektivna geometrija i stereoskopski vid</i></span></label><br>
+                            <span><b>Bojan Novaković</b> - <i>Matematički izazovi predviđanja opasnosti od udara asteroida</i></span></label><br>   
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_2" value = "checked2">
-                            <span><b>Srđan Vukmirović</b> - <i>Projektivna geometrija i stereoskopski vid</i></span></label><br>
+                            <span><b>Bojan Novaković</b> - <i>Matematički izazovi predviđanja opasnosti od udara asteroida</i></span></label><br>
                         <% } %>
                 
                         <% if(student.lecture_3 === true) { %>
@@ -48,118 +58,123 @@
                     
                         <% if(student.lecture_4 === true) { %>
                             <label><input type="checkbox" name="lecture_4" value = "checked4" checked >
-                            <span><b>Marija Cvetković</b> - <i>Matematika u službi zakona</i></span></label><br>
+                            <span><b>Nikola Velov</b> - <i>Eliptičke krive i primene</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_4" value = "checked4">
-                            <span><b>Marija Cvetković</b> - <i>Matematika u službi zakona</i></span></label><br>
+                            <span><b>Nikola Velov</b> - <i>Eliptičke krive i primene</i></span></label><br>
                         <% } %>
                     
                     
                         <% if(student.lecture_5 === true) { %>
                             <label><input type="checkbox" name="lecture_5" value = "checked5" checked>
-                            <span><b>Jelena Jocković</b> -  <i>Primena matematike: korak dalje od školskih primera</i></span></label><br>
+                            <span><b>Bojana Milošević</b> - <i>O nedostajućim podacima</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_5" value = "checked5">
-                            <span><b>Jelena Jocković</b> -  <i>Primena matematike: korak dalje od školskih primera</i></span></label><br>
+                            <span><b>Bojana Milošević</b> - <i>O nedostajućim podacima</i></span></label><br>
                         <% } %>
                     
                         <% if(student.lecture_6 === true) { %>
-                            <label><input type="checkbox" name="lecture_6" value = "checked6" checked >
-                            <span><b>Dejan Urošević</b> - <i>Ostaci supernovih: najmoćniji akceleratori u Galaksiji</i></span></label><br>
+                            <label><input type="checkbox" name="lecture_6" value = "checked6" checked>
+                            <span><b>Mina Ilić i Sanja Dabović</b> - <i>Priprema, pozor, sad: Prijava za prvi posao</i></span></label><br>                            
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_6" value = "checked6">
-                            <span><b>Dejan Urošević</b> - <i>Ostaci supernovih: najmoćniji akceleratori u Galaksiji</i></span></label><br>
+                            <span><b>Mina Ilić i Sanja Dabović</b> - <i>Priprema, pozor, sad: Prijava za prvi posao</i></span></label><br>
                         <% } %>
                     
                         <% if(student.lecture_7 === true) { %>
-                            <label><input type="checkbox" name="lecture_7" value = "checked7" checked >
-                            <span><b>Bojan Novaković</b> - <i>Matematički izazovi predviđanja opasnosti od udara asteroida</i></span></label><br>
+                            <label><input type="checkbox" name="lecture_7" value = "checked7" checked>
+                            <span><b>Sininša Pejin</b> - <i>AI Workflow</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_7" value = "checked7">
-                            <span><b>Bojan Novaković</b> - <i>Matematički izazovi predviđanja opasnosti od udara asteroida</i></span></label><br>
+                            <span><b>Sininša Pejin</b> - <i>AI Workflow</i></span></label><br>
                         <% } %>
                         
                         <% if(student.lecture_8 === true) { %>
                             <label><input type="checkbox" name="lecture_8" value = "checked8" checked >
-                            <span><b>Miljan Knežević</b> - <i>?</i></span></label><br>
+                            <span><b>Petar Slović</b> - <i>Ћ плус плус</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_8" value = "checked8">
-                            <span><b>Miljan Knežević</b> - <i>?</i></span></label><br>
+                            <span><b>Petar Slović</b> - <i>Ћ плус плус</i></span></label><br>
                         <% } %>
                     
                         <% if(student.lecture_9 === true) { %>
                             <label><input type="checkbox" name="lecture_9" value = "checked9" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Marija Cvetković</b> - <i>Matematika u službi zakona</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_9" value = "checked9">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Marija Cvetković</b> - <i>Matematika u službi zakona</i></span></label><br>
                         <% } %>
+                    </div>
                         
+                    <div id="subota">
+                        <h1 style = "text-align: center; font-size: 50px; font-family: Brush Script MT;"> Subota </h1>
+                        <hr class="w3-border-grey" style="margin:auto;width:40%">
+                        <br>
+
                         <% if(student.lecture_10 === true) { %>
                             <label><input type="checkbox" name="lecture_10" value = "checked10" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Jelena Jocković</b> -  <i>Primena matematike: korak dalje od školskih primera</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_10" value = "checked10">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Jelena Jocković</b> -  <i>Primena matematike: korak dalje od školskih primera</i></span></label><br>
                         <% } %>
                         
                         <% if(student.lecture_11 === true) { %>
                             <label><input type="checkbox" name="lecture_11" value = "checked11" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Srđan Vukmirović</b> - <i>Projektivna geometrija i stereoskopski vid</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_11" value = "checked11">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Srđan Vukmirović</b> - <i>Projektivna geometrija i stereoskopski vid</i></span></label><br>
                         <% } %>
                         
                         <% if(student.lecture_12 === true) { %>
                             <label><input type="checkbox" name="lecture_12" value = "checked12" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Vesna Todorčević</b> - <i>Iza kulisa stvaralaštva</i></span></label><br>                        
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_12" value = "checked12">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Vesna Todorčević</b> - <i>Iza kulisa stvaralaštva</i></span></label><br>                       
                         <% } %>
                         
                         <% if(student.lecture_13 === true) { %>
                             <label><input type="checkbox" name="lecture_13" value = "checked13" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Dejan Urošević</b> - <i>Ostaci supernovih: najmoćniji akceleratori u Galaksiji</i></span></label><br>                        
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_13" value = "checked13">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Dejan Urošević</b> - <i>Ostaci supernovih: najmoćniji akceleratori u Galaksiji</i></span></label><br>
                         <% } %>
                         
                         <% if(student.lecture_14 === true) { %>
                             <label><input type="checkbox" name="lecture_14" value = "checked14" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Mina Ilić i Sanja Dabović</b> - <i>Priprema, pozor, sad: Prijava za prvi posao</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_14" value = "checked14">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Mina Ilić i Sanja Dabović</b> - <i>Priprema, pozor, sad: Prijava za prvi posao</i></span></label><br>
                         <% } %>
                         
                         <% if(student.lecture_15 === true) { %>
                             <label><input type="checkbox" name="lecture_15" value = "checked15" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Željko Vrbaški</b> - <i>Softver inženjering u personalizovanoj medicini</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_15" value = "checked15">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Željko Vrbaški</b> - <i>Softver inženjering u personalizovanoj medicini</i></span></label><br>
                         <% } %>
                         
                         <% if(student.lecture_16 === true) { %>
                             <label><input type="checkbox" name="lecture_16" value = "checked16" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Ivana Bašaragin</b> - <i>statistika: Magični sastojak aktuarstva</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_16" value = "checked16">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
-                        <% } %>
+                            <span><b>Ivana Bašaragin</b> - <i>statistika: Magični sastojak aktuarstva</i></span></label><br>                        <% } %>
                         
                         <% if(student.lecture_17 === true) { %>
                             <label><input type="checkbox" name="lecture_17" value = "checked17" checked>
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Kompanije</b> - <i>Company circle</i></span></label><br>
                         <% } else {%>
                             <label><input type="checkbox" name="lecture_17" value = "checked17">
-                            <span><b>Bojana Milošević</b> - <i>?</i></span></label><br>
+                            <span><b>Kompanije</b> - <i>Company circle</i></span></label><br>
                         <% } %>
                         
-                        
+                    </div>
                     <br>
                     <input type="submit" value="Submit"> 
                 </div>
